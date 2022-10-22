@@ -8,6 +8,6 @@ public class Graph {
     @Getter @Setter
     private int[][] connections;
     @Getter @Setter
-    ArrayList<Vertex> vertices;
+    private ArrayList<Vertex> vertices;
 
 }

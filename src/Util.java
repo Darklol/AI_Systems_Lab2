@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Util {
 
@@ -85,8 +84,8 @@ public class Util {
                 "Уфа Казань 525\n" +
                 "Уфа Самара 461";
         for (String line : data.split("\n")){
-            int index1 = getVerticeIndexByCityName(line.split(" ")[0]);
-            int index2 = getVerticeIndexByCityName(line.split(" ")[1]);
+            int index1 = getVertexIndexByCityName(line.split(" ")[0]);
+            int index2 = getVertexIndexByCityName(line.split(" ")[1]);
             int value = Integer.parseInt(line.split(" ")[2]);
 
             connections[index1][index2] = value;
@@ -97,12 +96,20 @@ public class Util {
         return graph;
     }
 
-    public int getVerticeIndexByCityName(String cityName){
+    public int getVertexIndexByCityName(String cityName){
         ArrayList<Vertex> vertices = verticesInit();
         for (int i = 0; i < 27; i++){
             if (vertices.get(i).getCityName().equals(cityName)) return i;
         }
         return -1;
+    }
+
+    public String getVertexCityNameByIndex(int index){
+        ArrayList<Vertex> vertices = verticesInit();
+        for (int i = 0; i < 27; i++){
+            if (vertices.get(i).getIndex() == index) return vertices.get(i).getCityName();
+        }
+        return "Invalid Result";
     }
 
     public void coolTable() {

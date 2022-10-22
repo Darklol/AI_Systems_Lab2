@@ -1,7 +1,8 @@
 public class Main {
     public static void main(String[] args) {
         Util util = new Util();
-        util.coolTable();
-        System.out.println(util.getNeighbours(util.getVerticeIndexByCityName("Москва")));
+        Search search = new Search();
+
+        search.breathFirsSearch(util, "Мурманск","Одесса");
     }
 }
