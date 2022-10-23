@@ -2,7 +2,11 @@ import java.util.ArrayList;
 
 public class Util {
 
+    private int counter = 0;
     public ArrayList<Vertex> verticesInit() {
+
+
+
         ArrayList<Vertex> vertices = new ArrayList<>();
         String data = "0 Таллинн 1493\n" +
                 "1 Вильнюс 1235\n" +
@@ -138,6 +142,18 @@ public class Util {
             if (graph.getConnections()[vertex][i] != 0) neighbours.add(i);
         }
         return neighbours;
+    }
+
+    public void counterReset(){
+        this.counter = 0;
+    }
+
+    public void counterIncrement(){
+        this.counter++;
+    }
+
+    public void finalCounter(){
+        System.out.println("\nКоличество шагов затраченное на поиск: " + counter);
     }
 
 }

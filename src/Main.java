@@ -4,5 +4,12 @@ public class Main {
         Search search = new Search();
 
         search.breathFirsSearch(util, "Мурманск","Одесса");
+
+        search.depthFirstSearch(util, "Мурманск","Одесса");
+
+        search.depthFirstSearch(util, "Мурманск","Одесса", 6);
+
+
+//        search.printAllCities(util);
     }
 }
