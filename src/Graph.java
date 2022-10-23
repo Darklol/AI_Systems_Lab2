@@ -10,4 +10,10 @@ public class Graph {
     @Getter @Setter
     private ArrayList<Vertex> vertices;
 
+    public void resetAllVerticesWasVisited(){
+        for (Vertex vertex : vertices){
+            vertex.setWasVisited(false);
+        }
+    }
+
 }

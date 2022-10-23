@@ -144,6 +144,14 @@ public class Util {
         return neighbours;
     }
 
+    public void printAllCities(){
+        Graph graph = graphInit();
+        for (Vertex vertex : graph.getVertices()){
+            System.out.print(vertex.getCityName() + "-");
+        }
+        System.out.println();
+    }
+
     public void counterReset(){
         this.counter = 0;
     }
@@ -154,6 +162,10 @@ public class Util {
 
     public void finalCounter(){
         System.out.println("\nКоличество шагов затраченное на поиск: " + counter);
+    }
+
+    public boolean finishFlag (Graph graph, int finishNode){
+        return graph.getVertices().get(finishNode).isWasVisited();
     }
 
 }

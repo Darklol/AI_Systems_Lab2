@@ -7,9 +7,10 @@ public class Main {
 
         search.depthFirstSearch(util, "Мурманск","Одесса");
 
-        search.depthFirstSearch(util, "Мурманск","Одесса", 6);
+        search.depthLimitedSearch(util, "Мурманск","Одесса", 6);
 
+        search.iterativeDeependDepthFirstSearch(util, "Мурманск","Одесса");
 
-//        search.printAllCities(util);
+        search.bidirectionalSearch(util, "Мурманск","Одесса");
     }
 }
