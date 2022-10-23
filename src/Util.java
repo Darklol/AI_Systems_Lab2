@@ -38,8 +38,8 @@ public class Util {
         for (String line : data.split("\n")){
             int index = Integer.parseInt(line.split(" ")[0]);
             String cityName = line.split(" ")[1];
-            double euristicFunction = Double.parseDouble(line.split(" ")[2]);
-            vertices.add(new Vertex(index, cityName, euristicFunction));
+            int heuristicFunction = Integer.parseInt(line.split(" ")[2]);
+            vertices.add(new Vertex(index, cityName, heuristicFunction));
         }
         return vertices;
     }
@@ -163,6 +163,8 @@ public class Util {
     public void finalCounter(){
         System.out.println("\nКоличество шагов затраченное на поиск: " + counter);
     }
+
+    public int getCounter(){return counter;}
 
     public boolean finishFlag (Graph graph, int finishNode){
         return graph.getVertices().get(finishNode).isWasVisited();

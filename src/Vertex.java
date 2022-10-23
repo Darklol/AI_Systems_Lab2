@@ -1,7 +1,7 @@
 import lombok.Getter;
 import lombok.Setter;
 
-public class Vertex {
+public class Vertex implements Comparable<Vertex>{
     @Getter @Setter
     private String cityName;
     @Getter @Setter
@@ -9,14 +9,22 @@ public class Vertex {
     @Getter @Setter
     private boolean wasVisited;
     @Getter @Setter
-    private double optimalPath;
+    private int optimalPath;
     @Getter @Setter
-    private double euristicFunction;
+    private int heuristicFunction;
 
-    Vertex(int index, String cityName, double euristicFunction){
+    @Getter @Setter private int predecessor;
+
+    Vertex(int index, String cityName, int heuristicFunction){
         this.cityName = cityName;
         this.index = index;
-        this.optimalPath = euristicFunction;
+        this.heuristicFunction = heuristicFunction;
+        this.optimalPath = heuristicFunction;
         wasVisited = false;
+    }
+
+    @Override
+    public int compareTo(Vertex o) {
+        return this.getOptimalPath() - o.getOptimalPath();
     }
 }

@@ -12,5 +12,11 @@ public class Main {
         search.iterativeDeependDepthFirstSearch(util, "Мурманск","Одесса");
 
         search.bidirectionalSearch(util, "Мурманск","Одесса");
+
+        search.greedySearch(util, "Мурманск","Одесса");
+
+        search.aStarSearch(util, "Мурманск","Одесса");
+
+
     }
 }
