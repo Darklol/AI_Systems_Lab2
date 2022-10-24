@@ -82,6 +82,7 @@ public class Search {
 
     public void depthLimitedSearch(Util util, String startCityName, String finishCityName, int limit){
         System.out.println("Поиск с ограничением глубины");
+        System.out.println("Выбранная глубина: " + limit);
         util.counterReset();
         Graph graph = util.graphInit();
         int start = util.getVertexIndexByCityName(startCityName);
@@ -204,54 +205,6 @@ public class Search {
         System.out.println("\n\n");
 
     }
-
-
-//    public void aStarSearch(Util util, String startCityName, String finishCityName){
-//        System.out.println("Метод А*");
-//        Graph graph = util.graphInit();
-//        util.counterReset();
-//        int start = util.getVertexIndexByCityName(startCityName);
-//        int finish = util.getVertexIndexByCityName(finishCityName);
-//        ArrayList<Integer> pathSearch = new ArrayList<>();
-//        for (int i = 0; i < 27; i++) pathSearch.add(null);
-//        Queue<Integer> queue = new ArrayDeque<>();
-//        queue.add(start);
-//        graph.getVertices().get(start).setWasVisited(true);
-//        while (!queue.isEmpty()){
-//            int current = queue.poll();
-//            ArrayList<Vertex> neighbours = new ArrayList<>();
-//            for (int i : util.getNeighbours(current)) {
-//                neighbours.add(graph.getVertices().get(i));
-//                graph.getVertices().get(i).setOptimalPath(graph.getConnections()[i][current]);
-//            }
-//            neighbours.sort(Vertex::compareTo);
-////            System.out.println("\nНахожусь в городе "+graph.getVertices().get(current).getCityName());
-////            System.out.println("Непосещённые соседи: ");
-//            for (Vertex next : neighbours){
-//                if (!next.isWasVisited()) {
-////                    System.out.print(next.getCityName() + "(" + (next.getOptimalPath() + next.getHeuristicFunction()) + ") ");
-//                    next.setWasVisited(true);
-//                    queue.add(next.getIndex());
-//                    pathSearch.set(next.getIndex(), current);
-//                    if (!graph.getVertices().get(finish).isWasVisited()) util.counterIncrement();
-//                }
-//            }
-////            System.out.println();
-//        }
-//        ArrayList<Integer> pathPrint = new ArrayList<>();
-//        int path = 0;
-//        for (Integer previous = finish; previous != null; previous = pathSearch.get(previous)){
-//            pathPrint.add(previous);
-//            if (pathSearch.get(previous) != null) path += graph.getConnections()[previous][pathSearch.get(previous)];
-//        }
-//        for (int i = pathPrint.size() - 1; i >= 0; i--){
-//            System.out.print(util.getVertexCityNameByIndex(pathPrint.get(i)));
-//            if (i != 0) System.out.print("-");
-//        }
-//        util.finalCounter();
-//        System.out.println("Найденное расстояние: " + path);
-//        System.out.println("\n\n");
-//    }
 
 
     public void greedySearch(Util util, String startCityName, String finishCityName){
